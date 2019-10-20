@@ -1,6 +1,6 @@
 <?php if ( ! defined('TS_HEADER')) exit('No se permite el acceso directo al script');
 /**
- * Modelo para el control de los borradores
+ * Modelo para el control instalar themes
  *
  * @name    c.installtheme.php
  * @author  Miguel92
