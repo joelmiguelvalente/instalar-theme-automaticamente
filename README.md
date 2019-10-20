@@ -1,15 +1,16 @@
 # Instalar theme automáticamente RC 0.2.4
 
 1 - Subimos el **c.installtheme.php** a inc/class/
+
 2 - Luego buscamos en inc/php/ajax/**ajax.admin.php**
 ``` PHP
-		  'admin-nicks-change' => array('n' => 4, 'p' => ''),
+      'admin-nicks-change' => array('n' => 4, 'p' => ''),
       'admin-blacklist-delete' => array('n' => 4, 'p' => ''),
       'admin-badwords-delete' => array('n' => 4, 'p' => ''),
 ```
 y debajo agregar
 ``` PHP
-		'admin-instalar-tema' => array('n' => 2, 'p' => ''),
+       'admin-instalar-tema' => array('n' => 2, 'p' => ''),
 ```
 más abajo buscamos
 ``` PHP
