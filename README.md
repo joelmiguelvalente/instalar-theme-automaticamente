@@ -3,7 +3,9 @@ Básicamente lo que debe hacer es instalar el theme automáticamente, sin necesi
 
 1 - Subimos el **c.installtheme.php** a inc/class/
 
-2 - Luego buscamos en inc/php/ajax/**ajax.admin.php**
+2 - Subimos el **p.admin.tema.tpl** a themes/TU-TEMA/templates/t.php_files
+
+3 - Luego buscamos en inc/php/ajax/**ajax.admin.php**
 ``` PHP
       'admin-nicks-change' => array('n' => 4, 'p' => ''),
       'admin-blacklist-delete' => array('n' => 4, 'p' => ''),
@@ -37,9 +39,9 @@ y debajo pegamos
           //-->
         break;
 ```
-3 - Subimos el **installTheme.js** a SUTHEME/js
+4 - Subimos el **installTheme.js** a SUTHEME/js
 
-4 - Luego ir a SUTHEME/templates/admin_mods/m.admin_temas.tpl y debajo de
+5 - Luego ir a SUTHEME/templates/admin_mods/m.admin_temas.tpl y debajo de
 ``` HTML
 <input type="button"  onclick="location.href = '{$tsConfig.url}/admin/temas?act=nuevo'"value="Instalar nuevo tema" class="btn_g btnOk" style="margin-left:280px;">
 ```
@@ -59,7 +61,7 @@ pegamos esto
    </div>
    <script src="{$tsConfig.js}/installTheme.js?{$smarty.now}"></script>
 ```
-5 - Por último en admin.css agregaremos esto al final
+6 - Por último en admin.css agregaremos esto al final
 ``` CSS
 /************* UPLOAD PROGRESS ************/
 #form_upload {
