@@ -1,4 +1,4 @@
-# Instalar theme automáticamente RC 0.2.4
+# Instalar theme automáticamente RC 0.2.7
 Básicamente lo que debe hacer es instalar el theme automáticamente, sin necesidad de escribir el nombre de la carpeta del theme para que este se instale, ya que de este modo lo hará todo por ti y ya quedaría a tu disposición si lo activan o no!
 
 1 - Subimos el **c.installtheme.php** a inc/class/
@@ -11,6 +11,7 @@ Básicamente lo que debe hacer es instalar el theme automáticamente, sin necesi
 ```
 y debajo agregar
 ``` PHP
+       'admin-tema' => array('n' => 2, 'p' => 'tema'),
        'admin-instalar-tema' => array('n' => 2, 'p' => ''),
 ```
 más abajo buscamos
@@ -23,6 +24,11 @@ más abajo buscamos
 ```
 y debajo pegamos
 ``` PHP
+      case 'admin-tema':
+	 //<---
+	     $smarty->assign("tsTemas",$tsAdmin->getTemas());
+	 //--->
+       break;
         case 'admin-instalar-tema':
          //<--
             include("../class/c.installtheme.php");
