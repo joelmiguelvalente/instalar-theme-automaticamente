@@ -1,4 +1,4 @@
-# Instalar theme automáticamente RC 0.2.7
+# Instalar theme automáticamente BETA
 Básicamente lo que debe hacer es instalar el theme automáticamente, sin necesidad de escribir el nombre de la carpeta del theme para que este se instale, ya que de este modo lo hará todo por ti y ya quedaría a tu disposición si lo activan o no!
 
 1 - Subimos el **c.installtheme.php** a inc/class/
@@ -41,7 +41,7 @@ y debajo pegamos
 ```
 4 - Subimos el **installTheme.js** a SUTHEME/js
 
-5 - Luego ir a SUTHEME/templates/admin_mods/m.admin_temas.tpl y debajo de
+5 - Luego ir a SUTHEME/templates/admin_mods/**m.admin_temas.tpl** y debajo de
 ``` HTML
 <input type="button"  onclick="location.href = '{$tsConfig.url}/admin/temas?act=nuevo'"value="Instalar nuevo tema" class="btn_g btnOk" style="margin-left:280px;">
 ```
