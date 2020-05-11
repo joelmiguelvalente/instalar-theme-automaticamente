@@ -1,14 +1,3 @@
-function recargar() {
-   $('#loading').fadeIn(250);
-   $.ajax({
-      type: 'GET',
-      url: global_data.url + '/admin-tema.php',
-      success: function(h) {
-         $('#temas').html(h);
-         $('#loading').fadeOut(250);
-      }
-   });
-}
 $(document).ready(function(){    
    var msj = $("#message");
    var percent = $('#percent')
@@ -36,7 +25,7 @@ $(document).ready(function(){
                msj.removeClass('upload_ok').addClass('upload_error');
                msj.html(result); 
             } else {
-               recargar(); 
+               location.href = global_data.url + '/admin/temas?save=Instalado'; 
                msj.removeClass('upload_error').addClass('upload_ok');
                $('.install').slideUp(100);
                msj.html(result.substring(3)).append('Se esta instalando el theme, espera!');  
