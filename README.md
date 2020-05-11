@@ -1,11 +1,22 @@
-# Instalar theme automáticamente BETA
+# Instalar theme automáticamente v.0.1.0
 Básicamente lo que debe hacer es instalar el theme automáticamente, sin necesidad de escribir el nombre de la carpeta del theme para que este se instale, ya que de este modo lo hará todo por ti y ya quedaría a tu disposición si lo activan o no!
+
+Forma para realizar la instalación del theme sin problemas:
+* Antes de comprimir el theme a instalar debe crear un archivo **install.json**
+* El archivo **install.json** debe estar compuesto de esta manera
+``` JSON
+[
+   {
+      "name": "NOMBRE DEL THEME",
+      "author": "COPYRIGHT DEL THEME"
+   }
+]
+```
+* Luego comprimen la carpeta del theme con la extensión **.ZIP**, no vayan a comprimir el contenido de la carpeta del theme, porque este se decomprimirá dentro de la carpeta **themes**
 
 1 - Subimos el **c.installtheme.php** a inc/class/
 
-2 - Subimos el **p.admin.tema.tpl** a themes/TU-TEMA/templates/t.php_files
-
-3 - Luego buscamos en inc/php/ajax/**ajax.admin.php**
+2 - Luego buscamos en inc/php/ajax/**ajax.admin.php**
 ``` PHP
       'admin-nicks-change' => array('n' => 4, 'p' => ''),
       'admin-blacklist-delete' => array('n' => 4, 'p' => ''),
@@ -13,7 +24,6 @@ Básicamente lo que debe hacer es instalar el theme automáticamente, sin necesi
 ```
 y debajo agregar
 ``` PHP
-       'admin-tema' => array('n' => 2, 'p' => 'tema'),
        'admin-instalar-tema' => array('n' => 2, 'p' => ''),
 ```
 más abajo buscamos
@@ -26,11 +36,6 @@ más abajo buscamos
 ```
 y debajo pegamos
 ``` PHP
-      case 'admin-tema':
-	 //<---
-	     $smarty->assign("tsTemas",$tsAdmin->getTemas());
-	 //--->
-       break;
         case 'admin-instalar-tema':
          //<--
             include("../class/c.installtheme.php");
@@ -39,9 +44,9 @@ y debajo pegamos
           //-->
         break;
 ```
-4 - Subimos el **installTheme.js** a SUTHEME/js
+3 - Subimos el **installTheme.js** a SUTHEME/js
 
-5 - Luego ir a SUTHEME/templates/admin_mods/**m.admin_temas.tpl** y debajo de
+4 - Luego ir a SUTHEME/templates/admin_mods/**m.admin_temas.tpl** y debajo de
 ``` HTML
 <input type="button"  onclick="location.href = '{$tsConfig.url}/admin/temas?act=nuevo'"value="Instalar nuevo tema" class="btn_g btnOk" style="margin-left:280px;">
 ```
@@ -61,7 +66,7 @@ pegamos esto
    </div>
    <script src="{$tsConfig.js}/installTheme.js?{$smarty.now}"></script>
 ```
-6 - Por último en admin.css agregaremos esto al final
+5 - Por último en admin.css agregaremos esto al final
 ``` CSS
 /************* UPLOAD PROGRESS ************/
 #form_upload {
